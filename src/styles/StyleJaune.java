@@ -8,7 +8,7 @@ public class StyleJaune {
 	
 	public StyleJaune(){
 		c_name = Color.yellow;
-		s_name = "JauneTest";
+		s_name = "Jaune";
 	}
 	
 	public void setColor(Color c){

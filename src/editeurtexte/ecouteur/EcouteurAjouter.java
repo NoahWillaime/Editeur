@@ -28,10 +28,10 @@ public class EcouteurAjouter implements ActionListener {
 		int reponse = jf.showOpenDialog((Component)e.getSource());
 		if (reponse == JFileChooser.APPROVE_OPTION){
 			File fichier = jf.getSelectedFile();
-			System.out.println(fichier.getAbsolutePath());
 			String classe = JOptionPane.showInputDialog("Nom de la class ?");
-			this.o.addColor(fichier, classe);
-			//o.addColor(classe);		
+			if (classe != null) {
+				this.o.addColor(fichier, classe);
+			}	
 		}
 	}
 

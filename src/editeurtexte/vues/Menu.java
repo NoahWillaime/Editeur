@@ -27,8 +27,17 @@ public class Menu extends JMenuBar implements Observer {
 		this.ajouter.addActionListener(new EcouteurAjouter((ModeleT)o));
 		this.style.add(ajouter);
 		this.add(style);
+		//couleur par défaut
+		int i = 0;
+		for (String s : (ModeleT)o) {
+			this.jmi.add(new JMenuItem(s));
+			jmi.get(i).addActionListener(new EcouteurCouleur(o, s));
+			style.add(jmi.get(i));
+			i++;
+		}
 		o.addObserver(this);
 	}
+	
 	@Override
 	public void update(Observable o, Object arg1) {
 		if(((ModeleT)o).getSizeHM() > jmi.size()) {
